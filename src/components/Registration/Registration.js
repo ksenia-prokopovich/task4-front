@@ -14,7 +14,7 @@ class Registration extends React.Component {
     }
 
     create(){
-        fetch('http://localhost:8000/users/create', {
+        fetch('https://server-37go.onrender.com/users/create', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

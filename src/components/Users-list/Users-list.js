@@ -37,13 +37,13 @@ class UsersList extends React.Component {
     }
 
     delete(id) {
-        fetch('http://localhost:8000/users/delete/' + id, {
+        fetch('https://server-37go.onrender.com/users/delete/' + id, {
             method: 'DELETE',})
             .then(() => this.loadUsers())
     }
 
     loadUsers() {
-        fetch('http://localhost:8000/users')
+        fetch('https://server-37go.onrender.com/users')
             .then(response => response.json())
             .then(users => this.setState({ ...this.state, users }))
     }
