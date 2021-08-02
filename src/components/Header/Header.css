@@ -1,0 +1,56 @@
+.navbar {
+    background-color: #eeeeee !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navigation-list {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navigation-item:first-child {
+    flex: 1 0 auto;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    padding: 0;
+    margin-right: 20px;
+
+    background-color: white;
+    color: black;
+}
+
+.btn-outline-dark:hover {
+    background-color: black;
+}
+
+.btn-outline-dark:active {
+    opacity: 0.5;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: black;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+

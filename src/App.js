@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Registration from "./components/Registration/Registration";
+import UsersList from "./components/Users-list/Users-list";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import Login from "./components/Login/Login";
+import Header from "./components/Header/Header";
+import NotFound from "./components/Not-found/Not-found";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends React.Component {
+
+  constructor() {
+      super();
+      this.state = {
+          user: localStorage.getItem('user')
+      }
+  }
+
+  render() {
+    return <div>
+        <Header/>
+        <Router>
+            <Switch>
+                {this.state.user && <Route exact path="/" component={UsersList} />}
+                {!this.state.user && <Route path="/registration" component={Registration} />}
+                {!this.state.user && <Route path="/login" component={Login}/>}
+                <Route component={NotFound}/>
+            </Switch>
+        </Router>
     </div>
-  );
+  };
 }
+
 
 export default App;
